@@ -32,8 +32,8 @@ public class DisplayTest {
         password.sendKeys("yasin123456");
         Thread.sleep(2000);
         Assert.assertTrue(username.isDisplayed());
-        Assert.assertFalse(password.isDisplayed());
-        button.click();
+        Assert.assertTrue(password.isDisplayed());
+        submit.click();
 
         Thread.sleep(2000);
         driver.quit();
