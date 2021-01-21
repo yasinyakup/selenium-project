@@ -38,6 +38,7 @@ public class WindowTest {
 
 
 
+
         Set<String> windowHandles = driver.getWindowHandles();
         System.out.println(windowHandles.size());
 
