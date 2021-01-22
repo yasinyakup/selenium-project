@@ -12,14 +12,12 @@ import org.testng.annotations.Test;
 
 public class RadioButtonTest {
     private WebDriver driver;
-    private WebDriverFactory webDriverFactory;
     private final String URL = "http://practice.cybertekschool.com/radio_buttons";
     Logger logger;
     org.testng.log4testng.Logger l = org.testng.log4testng.Logger.getLogger(RadioButtonTest.class);
 
     public RadioButtonTest(){
-        webDriverFactory = new WebDriverFactory();
-        this.driver = webDriverFactory.getDriver(BrowserEnum.CHROME);
+        this.driver = WebDriverFactory.getDriver();
         logger = LoggerFactory.getLogger(RadioButtonTest.class);
     }
 

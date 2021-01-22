@@ -10,10 +10,9 @@ import org.testng.annotations.Test;
 public class WebDriverTest {
 
     private WebDriver driver;
-    private WebDriverFactory webDriverFactory = new WebDriverFactory();
 
     public WebDriverTest() {
-        driver = webDriverFactory.getDriver(BrowserEnum.EDGE);
+        driver = WebDriverFactory.getDriver();
     }
 
     @Test

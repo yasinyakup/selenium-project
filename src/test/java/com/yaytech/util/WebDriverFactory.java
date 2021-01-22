@@ -9,26 +9,40 @@ import org.openqa.selenium.opera.OperaDriver;
 
 public class WebDriverFactory {
 
-    public WebDriver getDriver(BrowserEnum browser) {
-        switch (browser) {
-            case CHROME : {
-                WebDriverManager.chromedriver().setup();
-                return new ChromeDriver();
+    private static WebDriver driver;
+
+    private WebDriverFactory(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public static WebDriver getDriver() {
+        BrowserEnum browser = BrowserEnum.getValue(ConfigurationReader.getValue("browser"));
+        if (driver == null) {
+            switch (browser) {
+                case CHROME: {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                    break;
+                }
+                case IE: {
+                    WebDriverManager.iedriver().setup();
+                    driver = new InternetExplorerDriver();
+                    break;
+                }
+                case EDGE: {
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                    break;
+                }
+                case OPERA: {
+                    WebDriverManager.operadriver();
+                    driver = new OperaDriver();
+                    break;
+                }
+                default:
+                    throw new RuntimeException("this driver is not supported. please check factory type");
             }
-            case IE :{
-                WebDriverManager.iedriver().setup();
-                return new InternetExplorerDriver();
-            }
-            case EDGE : {
-                WebDriverManager.edgedriver().setup();
-                return new EdgeDriver();
-            }
-            case OPERA :{
-                WebDriverManager.operadriver();
-                return new OperaDriver();
-            }
-            default :
-                throw new RuntimeException("this driver is not supported. please check factory type");
         }
+        return driver;
     }
 }

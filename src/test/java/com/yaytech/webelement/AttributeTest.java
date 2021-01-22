@@ -15,8 +15,7 @@ public class AttributeTest {
         WebDriver driver;
 
         public AttributeTest() {
-            this.webDriverFactory = new WebDriverFactory();
-            driver= webDriverFactory.getDriver(BrowserEnum.CHROME);
+            driver= WebDriverFactory.getDriver();
         }
 
     @Test

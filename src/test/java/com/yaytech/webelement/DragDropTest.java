@@ -1,5 +1,6 @@
 package com.yaytech.webelement;
 
+import com.yaytech.util.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class DragDropTest extends TestBase{
+public class DragDropTest extends TestBase {
 
     @Test
     public void test1() throws InterruptedException {

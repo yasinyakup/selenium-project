@@ -15,13 +15,11 @@ import java.util.Properties;
 import java.util.Set;
 
 public class WindowTest {
-    WebDriverFactory webDriverFactory;
     WebDriver driver;
 
     @BeforeTest
     public void beforeTest(){
-        this.webDriverFactory = new WebDriverFactory();
-        this.driver = this.webDriverFactory.getDriver(BrowserEnum.CHROME);
+        this.driver = WebDriverFactory.getDriver();
     }
     @FindBy(id = "test")
     WebElement e;

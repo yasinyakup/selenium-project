@@ -9,13 +9,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class DynamicElementTest {
-    private WebDriverFactory webDriverFactory;
     private WebDriver driver;
     private final String URL = "http://practice.cybertekschool.com/dynamic_controls";
 
     public DynamicElementTest(){
-        this.webDriverFactory = new WebDriverFactory();
-        this.driver = this.webDriverFactory.getDriver(BrowserEnum.CHROME);
+        this.driver = WebDriverFactory.getDriver();
 
     }
 

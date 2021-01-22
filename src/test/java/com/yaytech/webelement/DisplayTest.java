@@ -12,8 +12,7 @@ public class DisplayTest {
     WebDriverFactory webDriverFactory;
     WebDriver driver;
     public DisplayTest() {
-        this.webDriverFactory = new WebDriverFactory();
-        this.driver= this.webDriverFactory.getDriver(BrowserEnum.CHROME);
+        this.driver= WebDriverFactory.getDriver();
     }
 
     @Test

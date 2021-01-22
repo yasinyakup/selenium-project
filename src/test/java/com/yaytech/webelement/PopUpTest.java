@@ -16,8 +16,7 @@ public class PopUpTest {
 
     @BeforeTest
     public void beforeTest(){
-        this.webDriverFactory = new WebDriverFactory();
-        this.driver = webDriverFactory.getDriver(BrowserEnum.CHROME);
+        this.driver = WebDriverFactory.getDriver();
 
     }
 

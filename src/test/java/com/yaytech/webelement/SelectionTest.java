@@ -13,11 +13,10 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class SelectionTest {
-    WebDriverFactory webDriverFactory;
+
     WebDriver driver;
     public SelectionTest() {
-        this.webDriverFactory = new WebDriverFactory();
-        this.driver = this.webDriverFactory.getDriver(BrowserEnum.CHROME);
+        this.driver = WebDriverFactory.getDriver();
 
     }
 

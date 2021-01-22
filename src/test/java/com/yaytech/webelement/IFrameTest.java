@@ -1,10 +1,11 @@
 package com.yaytech.webelement;
 
+import com.yaytech.util.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class IFrameTest extends TestBase{
+public class IFrameTest extends TestBase {
 
     @Test
     public void test1(){

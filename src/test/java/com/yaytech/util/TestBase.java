@@ -1,19 +1,21 @@
-package com.yaytech.webelement;
+package com.yaytech.util;
 
 import com.yaytech.util.BrowserEnum;
 import com.yaytech.util.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    private WebDriverFactory webDriverFactory;
     private WebDriver driver;
+    private Actions actions;
 
-     static final String BASE_URL = "http://practice.cybertekschool.com/";
+     public static final String BASE_URL = "http://practice.cybertekschool.com/";
+     public static final String BASE_URL2 = "http://qa2.vytrack.com/";
 
     public WebDriver getDriver() {
         return driver;
@@ -21,10 +23,12 @@ public class TestBase {
 
     @BeforeTest
     public void beforeTest(){
-        this.webDriverFactory = new WebDriverFactory();
-        this.driver = this.webDriverFactory.getDriver(BrowserEnum.CHROME);
 
+        this.driver = WebDriverFactory.getDriver();
+        driver.manage().window().fullscreen();
+        this.actions = new Actions(this.driver);
         this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        this.driver.get(BASE_URL2);
     }
 
 

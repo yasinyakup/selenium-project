@@ -9,13 +9,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CheckBoxTest {
-  private  final WebDriverFactory webDriverFactory;
   private final WebDriver driver;
 
   public CheckBoxTest(){
 
-      this.webDriverFactory = new WebDriverFactory();
-      this.driver = this.webDriverFactory.getDriver(BrowserEnum.CHROME);
+      this.driver = WebDriverFactory.getDriver();
   }
 
   @Test
