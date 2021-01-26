@@ -3,6 +3,7 @@ package com.yaytech.util;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -24,6 +25,14 @@ public class WebDriverFactory {
                     driver = new ChromeDriver();
                     break;
                 }
+                case CHROME_HEADLESS:{
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--headless");
+                    //options.setHeadless(true);
+                    //options.addArguments("--disable-gpu");
+                   driver = new ChromeDriver(options);
+                   break;
+                }
                 case IE: {
                     WebDriverManager.iedriver().setup();
                     driver = new InternetExplorerDriver();
@@ -44,5 +53,12 @@ public class WebDriverFactory {
             }
         }
         return driver;
+    }
+
+    public static void closeDriver(){
+        if(driver!=null) {
+            driver.quit();
+            driver = null;
+        }
     }
 }

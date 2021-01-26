@@ -30,5 +30,12 @@ public class LoginPage {
         submitButton.click();
 
     }
+    public void loginDirectWithoutConfigurationFile(String username, String password){
+
+        usernameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        submitButton.click();
+
+    }
 
 }

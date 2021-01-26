@@ -1,7 +1,7 @@
 package com.yaytech.util;
 
 public enum BrowserEnum {
-    CHROME("chrome"), IE("ie"), FIREFOX("firefox"),
+    CHROME("chrome"), IE("ie"), FIREFOX("firefox"),CHROME_HEADLESS("chrome-headless"),
     EDGE("edge"),SAFARI("safari"), OPERA("opera");
 
     private String name;
